@@ -54,4 +54,3 @@ setInterval(function(){
     removeactiveclasses() 
 }
 , 5000);
-}
