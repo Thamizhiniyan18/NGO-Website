@@ -9,9 +9,6 @@ const campaign = document.querySelector('.campaign')
 const voultary = document.querySelector('.voultary-positions')
 let currentActive = 0 
 
-setBgToBody()
-window.addEventListener('scroll', originalPosition())
-
 function update() {
     round.forEach((round, idx) => {
         if(idx <= currentActive)
@@ -57,23 +54,4 @@ setInterval(function(){
     removeactiveclasses() 
 }
 , 5000);
-
-function originalPosition() {
-    const trigger = window.innerHeight;
-    const boxBottom = latestNews.getBoundingClientRect().top;
-    // const endTrigger = window.innerHeight;
-    console.log('Trigger : ', trigger)
-    console.log('boxBottom : ', boxBottom)
-    // console.log('endTrigger : ', endTrigger)
-
-
-    if(trigger >= boxBottom) {
-        campaign.classList.add('originalPosition')
-        voultary.classList.add('originalPosition')
-    }
-
-    else {
-        campaign.classList.remove('originalPosition')
-        voultary.classList.remove('originalPosition')
-    }
 }
